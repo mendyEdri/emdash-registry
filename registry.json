@@ -14,8 +14,8 @@
   "agents": {
     "architect": {
       "path": "agents/architect.md",
-      "description": "System design and architecture planning agent",
-      "tags": ["architecture", "design", "planning"],
+      "description": "Code architecture specialist focused on SOLID principles and clean design patterns",
+      "tags": ["architecture", "solid", "design-patterns", "refactoring"],
       "model": "sonnet-4-5"
     },
     "ui-browser-tester": {
