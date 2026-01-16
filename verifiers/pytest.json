@@ -1,0 +1,10 @@
+{
+  "type": "command",
+  "name": "pytest",
+  "description": "Python test runner with pytest",
+  "command": "pytest -v",
+  "timeout": 300,
+  "pass_on_exit_0": true,
+  "enabled": true,
+  "tags": ["python", "testing"]
+}

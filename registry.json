@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "repository": "https://github.com/mendyEdri/emdash.dev",
+  "base_path": "packages/registry",
+  "skills": {
+    "frontend-design": {
+      "path": "skills/frontend-design/SKILL.md",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality",
+      "tags": ["frontend", "design", "ui", "css"],
+      "user_invocable": true
+    },
+    "code-review": {
+      "path": "skills/code-review/SKILL.md",
+      "description": "Systematic code review with security, performance, and maintainability analysis",
+      "tags": ["review", "quality", "security"],
+      "user_invocable": true
+    },
+    "api-design": {
+      "path": "skills/api-design/SKILL.md",
+      "description": "Design RESTful and GraphQL APIs with best practices",
+      "tags": ["api", "rest", "graphql", "backend"],
+      "user_invocable": true
+    }
+  },
+  "rules": {
+    "typescript": {
+      "path": "rules/typescript.md",
+      "description": "TypeScript coding standards and best practices",
+      "tags": ["typescript", "javascript", "style"]
+    },
+    "python": {
+      "path": "rules/python.md",
+      "description": "Python coding standards following PEP8 and modern practices",
+      "tags": ["python", "style"]
+    },
+    "security": {
+      "path": "rules/security.md",
+      "description": "Security-first coding guidelines",
+      "tags": ["security", "owasp"]
+    }
+  },
+  "agents": {
+    "reviewer": {
+      "path": "agents/reviewer.md",
+      "description": "Code review specialist that analyzes PRs and suggests improvements",
+      "tags": ["review", "quality"],
+      "model": "claude-sonnet-4-20250514"
+    },
+    "architect": {
+      "path": "agents/architect.md",
+      "description": "System design and architecture planning agent",
+      "tags": ["architecture", "design", "planning"],
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "verifiers": {
+    "eslint": {
+      "path": "verifiers/eslint.json",
+      "description": "ESLint JavaScript/TypeScript linting",
+      "tags": ["javascript", "typescript", "linting"],
+      "type": "command"
+    },
+    "pytest": {
+      "path": "verifiers/pytest.json",
+      "description": "Python test runner with pytest",
+      "tags": ["python", "testing"],
+      "type": "command"
+    },
+    "type-check": {
+      "path": "verifiers/type-check.json",
+      "description": "TypeScript type checking",
+      "tags": ["typescript", "types"],
+      "type": "command"
+    }
+  }
+}

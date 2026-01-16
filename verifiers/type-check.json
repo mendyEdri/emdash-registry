@@ -1,0 +1,10 @@
+{
+  "type": "command",
+  "name": "type-check",
+  "description": "TypeScript type checking with tsc",
+  "command": "npx tsc --noEmit",
+  "timeout": 120,
+  "pass_on_exit_0": true,
+  "enabled": true,
+  "tags": ["typescript", "types"]
+}

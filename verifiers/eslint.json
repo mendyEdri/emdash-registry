@@ -1,0 +1,10 @@
+{
+  "type": "command",
+  "name": "eslint",
+  "description": "ESLint JavaScript/TypeScript linting",
+  "command": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+  "timeout": 120,
+  "pass_on_exit_0": true,
+  "enabled": true,
+  "tags": ["javascript", "typescript", "linting"]
+}
