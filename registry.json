@@ -8,49 +8,21 @@
       "description": "Create distinctive, production-grade frontend interfaces with high design quality",
       "tags": ["frontend", "design", "ui", "css"],
       "user_invocable": true
-    },
-    "code-review": {
-      "path": "skills/code-review/SKILL.md",
-      "description": "Systematic code review with security, performance, and maintainability analysis",
-      "tags": ["review", "quality", "security"],
-      "user_invocable": true
-    },
-    "api-design": {
-      "path": "skills/api-design/SKILL.md",
-      "description": "Design RESTful and GraphQL APIs with best practices",
-      "tags": ["api", "rest", "graphql", "backend"],
-      "user_invocable": true
     }
   },
-  "rules": {
-    "typescript": {
-      "path": "rules/typescript.md",
-      "description": "TypeScript coding standards and best practices",
-      "tags": ["typescript", "javascript", "style"]
-    },
-    "python": {
-      "path": "rules/python.md",
-      "description": "Python coding standards following PEP8 and modern practices",
-      "tags": ["python", "style"]
-    },
-    "security": {
-      "path": "rules/security.md",
-      "description": "Security-first coding guidelines",
-      "tags": ["security", "owasp"]
-    }
-  },
+  "rules": {},
   "agents": {
-    "reviewer": {
-      "path": "agents/reviewer.md",
-      "description": "Code review specialist that analyzes PRs and suggests improvements",
-      "tags": ["review", "quality"],
-      "model": "claude-sonnet-4-20250514"
-    },
     "architect": {
       "path": "agents/architect.md",
       "description": "System design and architecture planning agent",
       "tags": ["architecture", "design", "planning"],
-      "model": "claude-sonnet-4-20250514"
+      "model": "sonnet-4-5"
+    },
+    "ui-browser-tester": {
+      "path": "agents/ui-browser-tester.md",
+      "description": "UI testing specialist that interacts with web applications through Playwright to verify functionality",
+      "tags": ["testing", "ui", "browser", "playwright", "qa"],
+      "model": "accounts/fireworks/models/minimax-m2p1"
     }
   },
   "verifiers": {

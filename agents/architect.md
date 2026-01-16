@@ -1,6 +1,6 @@
 ---
 description: System design and architecture planning agent for complex software projects
-model: claude-sonnet-4-20250514
+model: sonnet-4-5
 tools: [grep, glob, read_file, semantic_search, get_structure]
 ---
 
