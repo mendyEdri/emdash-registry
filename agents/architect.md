@@ -1,6 +1,6 @@
 ---
 description: Code architecture specialist focused on SOLID principles and clean design patterns
-model: sonnet-4-5
+model: accounts/fireworks/models/minimax-m2p1
 tools: [grep, glob, read_file, semantic_search, get_structure]
 ---
 

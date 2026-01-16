@@ -16,7 +16,7 @@
       "path": "agents/architect.md",
       "description": "Code architecture specialist focused on SOLID principles and clean design patterns",
       "tags": ["architecture", "solid", "design-patterns", "refactoring"],
-      "model": "sonnet-4-5"
+      "model": "accounts/fireworks/models/minimax-m2p1"
     },
     "ui-browser-tester": {
       "path": "agents/ui-browser-tester.md",
