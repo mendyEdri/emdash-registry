@@ -8,6 +8,12 @@
       "description": "Create distinctive, production-grade frontend interfaces with high design quality",
       "tags": ["frontend", "design", "ui", "css"],
       "user_invocable": true
+    },
+    "learner": {
+      "path": "plugins/self-improving/skills/learner/SKILL.md",
+      "description": "Extract and persist learnings about user preferences, codebase patterns, and outcomes to improve future interactions",
+      "tags": ["memory", "learning", "self-improving", "meta"],
+      "user_invocable": true
     }
   },
   "rules": {},
@@ -55,6 +61,18 @@
         "agents": [],
         "rules": [],
         "verifiers": ["eslint"],
+        "hooks": 2
+      }
+    },
+    "self-improving": {
+      "path": "plugins/self-improving/PLUGIN.md",
+      "description": "A plugin that learns from interactions and improves over time by extracting and persisting knowledge",
+      "tags": ["memory", "learning", "self-improving", "productivity", "personalization"],
+      "components": {
+        "skills": ["learner"],
+        "agents": [],
+        "rules": [],
+        "verifiers": [],
         "hooks": 2
       }
     }
