@@ -213,6 +213,10 @@ mcp_servers:                    # Optional: MCP server configurations
 
 ### Verifier Schema ({name}.json)
 
+#### Command Verifier (type: "command")
+
+Runs a shell command to verify conditions.
+
 ```json
 {
   "type": "command",
@@ -226,6 +230,34 @@ mcp_servers:                    # Optional: MCP server configurations
 }
 ```
 
+#### LLM Verifier (type: "llm")
+
+Uses an LLM to validate conditions. Useful for semantic validation.
+
+```json
+{
+  "type": "llm",
+  "name": "verifier-name",
+  "description": "What this verifies",
+  "prompt": "Instructions for the LLM to validate input",
+  "input": {
+    "field1": "Description of input field 1",
+    "field2": "Description of input field 2"
+  },
+  "pass_on": ["PASS", "APPROVED"],
+  "timeout": 30,
+  "enabled": true,
+  "tags": ["tag1", "tag2"]
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `type` | `"llm"` | Indicates LLM-based verification |
+| `prompt` | string | Instructions for validation |
+| `input` | object | Schema of inputs the verifier expects |
+| `pass_on` | string[] | Response prefixes that indicate pass |
+
 ## Self-Improving Plugin Pattern
 
 The `self-improving` plugin demonstrates an advanced pattern where:
@@ -234,6 +266,8 @@ The `self-improving` plugin demonstrates an advanced pattern where:
 2. **Memory files** (`.md`) store atomic learnings
 3. **Hooks** trigger learning extraction automatically
 4. **Memory types** separate facts, patterns, and episodes
+5. **Rule (use-learnings)** ensures learnings are consulted before tasks
+6. **Verifier (learning-validator)** validates learnings before saving (LLM-based)
 
 ### Memory File Locations
 
@@ -283,7 +317,7 @@ Plugins inherit the registry version. Future consideration:
 Bundles: frontend-design skill + eslint verifier + formatting hooks
 
 ### 2. self-improving
-Bundles: learner skill + post-task/on-correction hooks + memory files
+Bundles: learner skill + use-learnings rule + learning-validator verifier + post-task/on-correction hooks + memory files
 
 ### 3. python-tdd (hypothetical)
 Bundles: pytest verifier + type-check verifier + pre-commit hooks + tdd-workflow rule

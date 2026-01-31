@@ -1,0 +1,15 @@
+{
+  "type": "llm",
+  "name": "learning-validator",
+  "description": "Validates learnings before persisting to ensure quality and prevent duplicates",
+  "prompt": "You are a learning validator. Given a proposed learning and the existing learnings file, determine if the learning should be saved.\n\nValidation criteria:\n1. ACTIONABLE: Can this be applied to future situations?\n2. SPECIFIC: Is it specific enough to be useful (not vague like 'user likes good code')?\n3. GENERAL: Is it general enough to apply beyond one situation?\n4. NON-DUPLICATE: Does it already exist in the file (same meaning, different words)?\n5. NON-CONTRADICTORY: Does it contradict an existing learning without superseding it?\n\nRespond with:\n- PASS: Learning meets all criteria\n- FAIL: <reason> - Learning fails criteria\n- SUPERSEDE: <line to supersede> - Learning should replace an existing one",
+  "input": {
+    "proposed_learning": "The new learning to validate",
+    "existing_file": "Contents of the target learnings file",
+    "learning_type": "semantic | procedural | episode"
+  },
+  "pass_on": ["PASS", "SUPERSEDE"],
+  "timeout": 30,
+  "enabled": true,
+  "tags": ["learning", "validation", "quality"]
+}
