@@ -16,7 +16,13 @@
       "user_invocable": true
     }
   },
-  "rules": {},
+  "rules": {
+    "use-learnings": {
+      "path": "plugins/self-improving/rules/use-learnings.md",
+      "description": "Ensures learnings are consulted and applied before starting tasks",
+      "tags": ["memory", "learning", "context"]
+    }
+  },
   "agents": {
     "architect": {
       "path": "agents/architect.md",
@@ -49,6 +55,12 @@
       "description": "TypeScript type checking",
       "tags": ["typescript", "types"],
       "type": "command"
+    },
+    "learning-validator": {
+      "path": "plugins/self-improving/verifiers/learning-validator.json",
+      "description": "Validates learnings before persisting to ensure quality and prevent duplicates",
+      "tags": ["learning", "validation", "quality"],
+      "type": "llm"
     }
   },
   "plugins": {
@@ -71,8 +83,8 @@
       "components": {
         "skills": ["learner"],
         "agents": [],
-        "rules": [],
-        "verifiers": [],
+        "rules": ["use-learnings"],
+        "verifiers": ["learning-validator"],
         "hooks": 2
       }
     }

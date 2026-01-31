@@ -6,8 +6,10 @@ components:
   skills:
     - learner
   agents: []
-  rules: []
-  verifiers: []
+  rules:
+    - use-learnings
+  verifiers:
+    - learning-validator
   hooks:
     - event: post-task
       command: emdash skill learner --mode=auto
@@ -82,6 +84,25 @@ Notable interactions with outcomes:
 | Task success | Approach that worked well | Procedural |
 | Task failure | Approach that didn't work | Episode |
 | Codebase discovery | "This project uses monorepo" | Semantic |
+
+## Rule: use-learnings
+
+Always loaded into context. Ensures the assistant:
+- Consults learnings before starting tasks
+- Applies user preferences consistently
+- Avoids repeating documented mistakes
+- Follows established patterns
+
+## Verifier: learning-validator
+
+An LLM-based verifier that validates learnings before they're saved:
+- **Actionable**: Can it be applied to future situations?
+- **Specific**: Is it useful (not vague)?
+- **General**: Does it apply beyond one situation?
+- **Non-duplicate**: Doesn't already exist?
+- **Non-contradictory**: Doesn't conflict without superseding?
+
+Returns: `PASS`, `FAIL <reason>`, or `SUPERSEDE <line>`
 
 ## Hooks
 
