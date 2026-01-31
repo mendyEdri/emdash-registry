@@ -9,6 +9,7 @@ This is the **emdash Registry** - a community registry of reusable components fo
 - **Rules**: Coding standards and guidelines
 - **Agents**: Custom AI agent configurations
 - **Verifiers**: Command-based validation configs
+- **Plugins**: Bundles that combine multiple components (skills, rules, agents, verifiers, hooks) for easy installation
 
 ## Repository Structure
 
@@ -17,6 +18,7 @@ This is the **emdash Registry** - a community registry of reusable components fo
 - `rules/{name}.md` - Plain markdown coding guidelines
 - `agents/{name}.md` - Agent configs with YAML frontmatter + system prompt
 - `verifiers/{name}.json` - Verification command configurations
+- `plugins/{name}/PLUGIN.md` - Plugin bundles with YAML frontmatter
 
 ## Component Formats
 
@@ -25,6 +27,8 @@ This is the **emdash Registry** - a community registry of reusable components fo
 **Agents** use YAML frontmatter with `description`, `model`, `tools`, optional `mcp_servers`, and system prompt in markdown body.
 
 **Verifiers** are JSON with `type`, `name`, `command`, `timeout`, `pass_on_exit_0`, `enabled`, and `tags`.
+
+**Plugins** use YAML frontmatter with `name`, `description`, `tags`, and `components` (containing arrays for `skills`, `rules`, `agents`, `verifiers`, and inline `hooks` definitions). The markdown body provides plugin documentation.
 
 ## Working With This Repository
 
