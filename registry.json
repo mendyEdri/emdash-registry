@@ -44,5 +44,19 @@
       "tags": ["typescript", "types"],
       "type": "command"
     }
+  },
+  "plugins": {
+    "frontend-workflow": {
+      "path": "plugins/frontend-workflow/PLUGIN.md",
+      "description": "Complete frontend development workflow with design skills, linting, and quality hooks",
+      "tags": ["frontend", "workflow", "design", "linting", "quality"],
+      "components": {
+        "skills": ["frontend-design"],
+        "agents": [],
+        "rules": [],
+        "verifiers": ["eslint"],
+        "hooks": 2
+      }
+    }
   }
 }
